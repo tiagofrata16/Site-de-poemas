@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+.cabecalho-nav a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.cabecalho-nav a:hover {
+    opacity: 0.7;
+}
+
+.cabecalho-logo {
+    font-size: 40px;
+    text-transform: uppercase;
+    color: black;
+}
+
+.cabecalho {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: rgb(138,43,226); 
+    font-family: 'Roboto', sans-serif;
+}
+
+.principal {
+    background-color: rgb(252, 189, 107);
+    font-family: 'Roboto', sans-serif;
+}
+
+.cabecalho-nav {
+    display: flex;
+    gap: 40px;
+    font-size: 20px;
+}
+
+.mobile-menu {
+    display: none;
+    cursor: pointer;
+}
+
+.mobile-menu div {
+    width: 32px;
+    height: 2px;
+    background: #fff;
+    margin: 8px;
+    transition: 0.3s;
+}
+
+.principal-container1 {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 40px;
+}
+
+.principal-container1 div {
+    box-shadow: 2px 2px 4px black;
+    overflow: hidden;
+    border-radius: 10px ;
+    height: 500px;
+    width: 400px;
+    padding-left: 15px;
+    background-color: rgb(8, 143, 143);
+}
+
+.principal-container2 {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.principal-container2-poema3 {
+    box-shadow: 2px 2px 4px black;
+    overflow: hidden;
+    height: 970px;
+    width: 400px;
+    border-radius: 10px;
+    padding-left: 15px;
+    background-color: rgb(8, 143, 143);
+}
+
+.principal-container3 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 40px;
+    padding-bottom: 40px;
+}
+
+.principal-container3 div{
+    box-shadow: 2px 2px 4px black;
+    overflow: hidden;
+    border-radius: 10px;
+    padding-left: 15px;
+    background-color: rgb(8, 143, 143);
+}
+
+.principal-container3-poema4 {
+    height: 550px;
+    width: 330px;
+}
+
+.principal-container3-poema5 {
+    height: 680px;
+    width: 400px;
+}
+
+.titulo {
+    font-size: 50px;
+}
+
+.autor {
+    font-size: 25px;   
+}
+
+.estrofe {
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.rodape {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    background-color: rgb(138,43,226);
+    font-family: 'Roboto', sans-serif;
+}
+
+@media (max-width: 1000px){
+    .principal-container1,
+    .principal-container3 {
+        flex-wrap: wrap; /*respeita largura do elemento e quebra linha*/
+    }
+}
+
+@media (max-width: 999px) { 
+   body {
+       overflow-x: hidden;
+   }
+   .cabecalho-nav {
+       position: absolute; 
+       top: 87px;
+       right: 0; /*fica junto ao lado direito*/
+       width: 50vw;
+       height: 580px;
+       background: #23232e;
+       flex-direction: column;
+       align-items: center;
+       justify-content: space-around;
+       transform: translateX(100%);
+       transition: transform 0.3s ease-in;
+   }
+   
+   .cabecalho-nav a {
+       margin-left: 0;
+       opacity: 0; /*nao aparece na tela*/        
+   }
+
+   .mobile-menu {
+       display: block;
+   }
+}
+
+.cabecalho-nav.active {
+    transform: translateX(0);
+}
+
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }    
+}
+
+.mobile-menu.active .linha1 { 
+    transform: rotate(-45deg) translate(-8px, 8px);    /*gira 45 graus para esquerda*/
+   }
+   .mobile-menu.active .linha2 { /*desaparece*/
+       opacity: 0;
+   }
+   
+   .mobile-menu.active .linha3 {
+       transform: rotate(45deg) translate(-5px, -7px); /*gira 45 graus para direita*/
+   }
+
+@media (max-width: 800px){
+    .principal-container1 {
+        flex-direction: row;
+        gap: 40px;
+    }    
+}
+
+@media (max-width:730px){
+     .principal-container3 {
+        flex-direction: row;
+        gap: 40px;
+     }
+}
+
+@media (max-width:450px){
+    .principal-container1 div,
+    .principal-container2 div,
+    .principal-container3 div {
+        margin-left: 5px;
+        margin-right: 5px;
+        width: 100%;
+    }
+}
